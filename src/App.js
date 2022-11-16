@@ -9,22 +9,32 @@ import CobaPut from './components/CobaPut';
 import CobaAxios from './components/CobaAxios';
 import SideEffect from './components/SideEffect';
 import CobaDelete from './components/CobaDelete';
+import Home from './components/Home';
+
 import { GlobalProvider } from './context/GlobalContext';
+import {BrowserRouter, Routes, Route} from 'react-router-dom'
 
 function App() {
   return (
-    <GlobalProvider>
-      {/* <Tugas7 />
-      <Tugas8 name="Yudith" email="yudith@upi.edu" batch="36" />
-      <Tugas9 />
-      <Tugas10 /> */}
-      {/* <Tugas11 /> */}
-      <Tugas12 />
-      {/* <CobaPut /> */}
-      {/* <CobaAxios /> */}
-      {/* <SideEffect /> */}
-      {/* <CobaDelete /> */}
-    </GlobalProvider>
+    <>
+      <BrowserRouter>
+        <GlobalProvider>
+          <Routes>
+            {/* <Tugas7 />
+            <Tugas8 name="Yudith" email="yudith@upi.edu" batch="36" />
+            <Tugas9 />
+            <Tugas10 /> */}
+            {/* <Tugas11 /> */}
+            <Route path='/' element={<Home />} />
+            <Route path='/tugas-12' element={<Tugas12 />} />
+            {/* <CobaPut /> */}
+            {/* <CobaAxios /> */}
+            {/* <SideEffect /> */}
+            {/* <CobaDelete /> */}
+          </Routes>
+        </GlobalProvider>
+      </BrowserRouter>
+    </>
   );
 }
 
