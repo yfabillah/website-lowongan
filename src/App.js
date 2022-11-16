@@ -8,10 +8,12 @@ import Tugas12 from './components/tugas12';
 import CobaPut from './components/CobaPut';
 import CobaAxios from './components/CobaAxios';
 import SideEffect from './components/SideEffect';
+import CobaDelete from './components/CobaDelete';
+import { GlobalProvider } from './context/GlobalContext';
 
 function App() {
   return (
-    <div>
+    <GlobalProvider>
       {/* <Tugas7 />
       <Tugas8 name="Yudith" email="yudith@upi.edu" batch="36" />
       <Tugas9 />
@@ -21,7 +23,8 @@ function App() {
       {/* <CobaPut /> */}
       {/* <CobaAxios /> */}
       {/* <SideEffect /> */}
-    </div>
+      {/* <CobaDelete /> */}
+    </GlobalProvider>
   );
 }
 
