@@ -2,9 +2,9 @@ import axios from 'axios'
 import React, { useEffect, useState } from 'react'
 import { Table } from 'flowbite-react'
 
-const CobaFetch = () => {
+const Tugas11 = () => {
 
-    const [data, setData] = useState(null)
+    const [data, setData] = useState([])
 
     useEffect(() => {
         axios.get("https://backendexample.sanbercloud.com/api/student-scores")
@@ -16,12 +16,14 @@ const CobaFetch = () => {
         })
     }, [])
 
-    function handleIndexScore (res) {
-      const score = res.score
-
+    function handleIndexScore (score) {
       if (score > 80) {
         return("A")
       }
+      if(score > 70){
+        return("B")
+      }
+      return("E")
 
     }
     
@@ -36,7 +38,7 @@ const CobaFetch = () => {
               <Table.HeadCell>Course</Table.HeadCell>
               <Table.HeadCell>Index Nilai</Table.HeadCell>
           </Table.Head>
-          { data !== null && data.map((res, index) => {
+          { !data !== null && data.map((res, index) => {
             return(
               <Table.Body className='bg-white dark:border-gray-700 dark:bg-gray-800'>
                 <Table.Row className='divide-y'>
@@ -55,4 +57,4 @@ const CobaFetch = () => {
   )
 }
 
-export default CobaFetch
+export default Tugas11
