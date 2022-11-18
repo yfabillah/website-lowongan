@@ -10,6 +10,7 @@ import CobaAxios from './components/CobaAxios';
 import SideEffect from './components/SideEffect';
 import CobaDelete from './components/CobaDelete';
 import Home from './components/Home';
+import CreateForm from './components/CreateForm';
 
 import { GlobalProvider } from './context/GlobalContext';
 import {BrowserRouter, Routes, Route} from 'react-router-dom'
@@ -27,6 +28,8 @@ function App() {
             {/* <Tugas11 /> */}
             <Route path='/' element={<Home />} />
             <Route path='/tugas-12' element={<Tugas12 />} />
+            <Route path='/create' element={<CreateForm />}/>
+            <Route path='/edit/:idData' element={<CreateForm />}/>
             {/* <CobaPut /> */}
             {/* <CobaAxios /> */}
             {/* <SideEffect /> */}
