@@ -112,6 +112,7 @@ export const GlobalProvider = (props) => {
       let fetchData = () => {
         axios.get("https://backendexample.sanbercloud.com/api/student-scores")
         .then( (res) => {
+            console.log(res)
             setData([...res.data])
         })
         .catch((error) => {
